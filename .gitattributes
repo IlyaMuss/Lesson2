@@ -1,2 +1,205 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+package org.main;
+import java.util.Scanner;
+import java.util.Arrays;
+public class Main {
+    public static void main(String[] args) {
+        printThreeWords();
+        checkSumSign();
+        printColor();
+        compareNumbers();
+    }
+
+    public static void printThreeWords() {
+        System.out.println("Orange");
+        System.out.println("Banana");
+        System.out.println("Apple");
+    }
+
+        public static void checkSumSign() {
+            int a = -10;
+            int b = 5;
+            int s = a + b;
+            if (s >= 0) {
+                System.out.println("Сумма положительная");
+            } else {
+                System.out.println("Сумма отрицательная");
+            }
+        }
+
+    public static void printColor() {
+        int value = 101; //Число для проверки
+        if (value <= 0) {
+            System.out.println("Красный");
+        } else if (value > 0 && value <= 100) {
+            System.out.println("Желтый");
+        } else {
+            System.out.println("Зеленый");
+        }
+    }
+
+    public static void compareNumbers() {
+        int a = 1;
+        int b = 2;
+        if (a >= b) {
+            System.out.println("a >= b");
+        } else {
+            System.out.println("a < b");
+        }
+    }
+
+    public static class test5 {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Первое целое число: ");
+            int a = scanner.nextInt();
+            System.out.print("Второе целое число: ");
+            int b = scanner.nextInt();
+            boolean result = checkSumRange(a, b);
+            if (result) {
+                System.out.println("True");
+            } else {
+                System.out.println("False");
+            }
+        }
+
+        public static boolean checkSumRange(int a, int b) {
+            return (a + b >= 10 && a + b <= 20);
+        }
+    }
+
+    public static class test6 {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Введите число: ");
+            int a = scanner.nextInt();
+            if (a >= 0) {
+                System.out.println("Число положительное");
+            } else
+                System.out.println("Число отрицательное");
+        }
+    }
+
+    public static class test7 {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Введите число: ");
+            int a = scanner.nextInt();
+            boolean result = a < 0;
+            if (result) {
+                System.out.println("True");
+            } else {
+                System.out.println("False");
+            }
+        }
+    }
+
+    public static class test8 {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Введите строку: ");
+            String text = scanner.nextLine();
+            System.out.print("Сколько раз повторить строку? ");
+            int a = scanner.nextInt();
+            for (int i = 0; i < a; i++) {
+                System.out.println(text);
+            }
+        }
+    }
+
+    public static class test9 {
+        public static boolean year(int a) {
+            return (a % 4 == 0 && a % 100 != 0) || (a % 400 == 0);
+        }
+
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Введите год, чтобы узнать високосный ли он: ");
+            int a = scanner.nextInt();
+            System.out.println(year(a));
+        }
+    }
+
+        public static class test10 {
+            public static void main(String[] args) {
+                int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+                System.out.println("Исходный массив:        " + Arrays.toString(arr));
+                int[] invertArr = new int[arr.length];
+                for (int i = 0; i < arr.length; i++) {
+                    if (arr[i] == 0) {
+                        invertArr[i] = 1;
+                    } else {
+                        invertArr[i] = 0;
+                    }
+                }
+                System.out.println("Инвертированный массив: " + Arrays.toString(invertArr));
+            }
+        }
+
+    public static class test11 {
+        public static void main(String[] args) {
+            int[] arr = new int[100];
+                for (int i = 0; i < arr.length; i++) {
+                    arr[i] = i + 1;
+                }
+                System.out.println("Массив:");
+                for (int num : arr) {
+                    System.out.print(num + " ");
+                }
+            }
+        }
+    public static class test12 {
+        public static void main(String[] args) {
+            int[] origArr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+            int[] modArr = new int[origArr.length];
+            for (int i = 0; i < origArr.length; i++) {
+                if (origArr[i] < 6) {
+                    modArr[i] = origArr[i] * 2;
+                } else {
+                    modArr[i] = origArr[i];
+                }
+            }
+            System.out.println("Исходный массив:   " + Arrays.toString(origArr));
+            System.out.println("Измененный массив: " + Arrays.toString(modArr));
+        }
+    }
+    public static class test13 {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int size = 5;
+            int[][] arr = new int[size][size];
+            for (int row = 0; row < size; row++) {
+                for (int col = 0; col < size; col++) {
+                    if ((row == col) || (col == (size - 1 - row))) {
+                        arr[row][col] = 1;
+                    } else {
+                        arr[row][col] = 0;
+                    }
+                }
+            }
+            for (int[] row : arr) {
+                for (int value : row) {
+                    System.out.printf("%d ", value);
+                }
+               System.out.println();
+            }
+        }
+    }
+    public static class test14 {
+        public static int[] generateArray(int len, int initialValue) {
+            int[] result = new int[len];
+            for (int i = 0; i < len; i++) {
+                result[i] = initialValue;
+            }
+            return result;
+        }
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Введите длину массива: ");
+            int len = scanner.nextInt();
+            System.out.print("Введите значение: ");
+            int initialValue = scanner.nextInt();
+            int[] generatedArray = generateArray(len, initialValue);
+            System.out.println("Массив: " + Arrays.toString(generatedArray));
+        }
+    }
+}
